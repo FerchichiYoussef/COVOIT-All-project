@@ -11,6 +11,11 @@ import com.covoitall.mobile.ui.auth.AuthViewModel
 import com.covoitall.mobile.ui.auth.LoginActivity
 import com.covoitall.mobile.ui.auth.RegisterActivity
 import com.covoitall.mobile.ui.common.appViewModels
+import com.covoitall.mobile.ui.lines.LinesActivity
+import com.covoitall.mobile.ui.profile.ProfileActivity
+
+/**
+ * Point d'entrée de l'espace navettes (Ferchichi Youssef).
 import com.covoitall.mobile.ui.driver.DriverRidesActivity
 import com.covoitall.mobile.ui.profile.ProfileActivity
 
@@ -29,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.registerButton.setOnClickListener { open(RegisterActivity::class.java) }
         binding.loginButton.setOnClickListener { open(LoginActivity::class.java) }
+        binding.guestLinesButton.setOnClickListener { open(LinesActivity::class.java) }
+        binding.linesCard.setOnClickListener { open(LinesActivity::class.java) }
         binding.driverRidesCard.setOnClickListener { open(DriverRidesActivity::class.java) }
         binding.profileButton.setOnClickListener { open(ProfileActivity::class.java) }
         binding.logoutButton.setOnClickListener { authViewModel.logout() }

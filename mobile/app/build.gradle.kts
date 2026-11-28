@@ -9,6 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
+        applicationId = "com.covoitall.mobile.youssef"
         applicationId = "com.covoitall.mobile.mohamed"
         minSdk = 26
         targetSdk = 35
