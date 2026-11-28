@@ -17,4 +17,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "COVOITALLMobile_Youssef"
+rootProject.name = "COVOITALLMobile_Mohamed"
 include(":app")

@@ -16,6 +16,11 @@ import com.covoitall.mobile.ui.profile.ProfileActivity
 
 /**
  * Point d'entrée de l'espace navettes (Ferchichi Youssef).
+import com.covoitall.mobile.ui.driver.DriverRidesActivity
+import com.covoitall.mobile.ui.profile.ProfileActivity
+
+/**
+ * Point d'entrée de l'espace conducteur (Mohamed Saif Reguigui).
  * L'affichage est conditionné par authViewModel.authenticatedUser (session Room).
  */
 class MainActivity : AppCompatActivity() {
@@ -31,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener { open(LoginActivity::class.java) }
         binding.guestLinesButton.setOnClickListener { open(LinesActivity::class.java) }
         binding.linesCard.setOnClickListener { open(LinesActivity::class.java) }
+        binding.driverRidesCard.setOnClickListener { open(DriverRidesActivity::class.java) }
         binding.profileButton.setOnClickListener { open(ProfileActivity::class.java) }
         binding.logoutButton.setOnClickListener { authViewModel.logout() }
 
@@ -55,6 +61,13 @@ class MainActivity : AppCompatActivity() {
             "shuttle_driver" -> "Chauffeur de navette"
             "admin" -> "Administrateur"
             else -> user.role
+        }
+        binding.driverRidesCard.isVisible = user.isDriver
+        binding.driverStatusText.isVisible = user.isDriver && !user.isApprovedDriver
+        binding.driverStatusText.text = when (user.driverStatus) {
+            "pending" -> "Vos documents sont en cours de vérification par l'administrateur. Vous pourrez publier des trajets dès leur validation."
+            "rejected" -> "Vos documents ont été refusés. Corrigez votre dossier depuis le site web COVOIT'ALL."
+            else -> "Déposez vos documents (permis, assurance, carte grise) depuis le site web COVOIT'ALL pour publier des trajets."
         }
     }
 

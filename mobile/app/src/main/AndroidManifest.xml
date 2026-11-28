@@ -8,6 +8,7 @@
         android:name=".CovoitallApp"
         android:allowBackup="true"
         android:label="COVOIT'ALL — Navettes"
+        android:label="COVOIT'ALL — Conducteur"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covoitall"
         android:usesCleartextTraffic="true">
@@ -24,5 +25,8 @@
         <activity android:name=".ui.profile.ProfileActivity" android:exported="false" />
         <activity android:name=".ui.lines.LinesActivity" android:exported="false" />
         <activity android:name=".ui.lines.LineDetailActivity" android:exported="false" />
+        <activity android:name=".ui.driver.DriverRidesActivity" android:exported="false" />
+        <activity android:name=".ui.driver.RideFormActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.driver.RideReservationsActivity" android:exported="false" />
     </application>
 </manifest>

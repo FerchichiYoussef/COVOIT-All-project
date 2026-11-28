@@ -28,12 +28,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:text="Navettes suivies en temps réel." />
+            android:text="Espace conducteur." />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Votre ligne,\nen direct."
+            android:text="Publiez,\ngérez, roulez."
             android:textColor="@color/ink"
             android:textSize="42sp"
             android:textStyle="bold" />
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="Consultez les arrêts et les horaires, puis suivez la navette sur la carte."
+            android:text="Publiez vos trajets, traitez les demandes et suivez vos statuts."
             android:textSize="17sp" />
 
         <View
@@ -74,6 +77,9 @@
     </LinearLayout>
 
     <!-- Tableau de bord réseau -->
+    </LinearLayout>
+
+    <!-- Tableau de bord conducteur -->
     <ScrollView
         android:id="@+id/dashboardContainer"
         android:layout_width="match_parent"
@@ -111,6 +117,15 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/linesCard"
+            <TextView
+                android:id="@+id/driverStatusText"
+                style="@style/Text.Error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/driverRidesCard"
                 style="@style/Widget.Covoitall.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,6 +142,9 @@
                     <TextView style="@style/Text.Eyebrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Navettes partagées" />
                     <TextView style="@style/Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lignes et suivi GPS" />
                     <TextView style="@style/Text.Body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Consultez les lignes et localisez la navette en temps réel." />
+                    <TextView style="@style/Text.Eyebrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Espace conducteur" />
+                    <TextView style="@style/Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mes trajets publiés" />
+                    <TextView style="@style/Text.Body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Publiez, modifiez, supprimez vos trajets et gérez les réservations." />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

@@ -12,6 +12,12 @@ import com.covoitall.mobile.ui.lines.LinesViewModel
 import com.covoitall.mobile.ui.profile.ProfileViewModel
 
 /** Fabrique des ViewModels de l'espace navettes/lignes/GPS (Youssef). */
+import com.covoitall.mobile.ui.driver.DriverRidesViewModel
+import com.covoitall.mobile.ui.driver.RideFormViewModel
+import com.covoitall.mobile.ui.driver.RideReservationsViewModel
+import com.covoitall.mobile.ui.profile.ProfileViewModel
+
+/** Fabrique des ViewModels de l'espace conducteur (Mohamed Saif). */
 class ViewModelFactory(private val container: AppContainer) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T = with(container) {
@@ -20,6 +26,9 @@ class ViewModelFactory(private val container: AppContainer) : ViewModelProvider.
             ProfileViewModel::class.java -> ProfileViewModel(authRepository)
             LinesViewModel::class.java -> LinesViewModel(lineRepository)
             LineDetailViewModel::class.java -> LineDetailViewModel(lineRepository)
+            DriverRidesViewModel::class.java -> DriverRidesViewModel(rideRepository, authRepository)
+            RideFormViewModel::class.java -> RideFormViewModel(rideRepository)
+            RideReservationsViewModel::class.java -> RideReservationsViewModel(rideRepository)
             else -> throw IllegalArgumentException("ViewModel inconnu : ${modelClass.name}")
         } as T
     }

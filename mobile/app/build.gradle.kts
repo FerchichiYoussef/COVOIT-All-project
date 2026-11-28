@@ -10,6 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.covoitall.mobile.youssef"
+        applicationId = "com.covoitall.mobile.mohamed"
         minSdk = 26
         targetSdk = 35
         versionCode = 2
